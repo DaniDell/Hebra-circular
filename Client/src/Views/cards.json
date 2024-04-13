@@ -1,0 +1,47 @@
+[ {
+    "title": "Hebra Circular",
+    "subtitle": "Soluciones para la industria textil: gestión y circularidad.",
+    "description": "Mitigación y trazabilidad de remanetes ♻️",
+    "image": [
+        "/logo_hebra.png",
+        "/perfil_hebra.png"
+    ],
+    "redirection": "https://www.linkedin.com/company/hebra-circular/",
+    "ods": [
+        { "color": "#BE8B2D", "text": "ODS 12:Produccion resp." }, 
+        { "color": "#FF3A21", "text": "ODS 5 : = de género" },
+        { "color": "#19486A", "text": "ODS 17: Alianzas" }
+    ],
+    "category": [
+        { "symbol": "Educación", "text": "educador" },
+        { "symbol": "Asesor.", "text": "asesoramiento" },
+        { "symbol": "Manufactura", "text": "fabricante textil" }
+    ],
+    "instagramLink": "https://www.instagram.com/hebra.circular/",
+    "linkedinLink": "https://www.linkedin.com/company/hebra-circular/"
+},
+    {
+        "title": "Trama B Textil",
+        "subtitle": "Impulsamos cadenas de valor de impacto social y ambiental 🌱",
+        "description": "Economía circular y social 🤝",
+        "image": [
+            "/logo_trama.png",
+            "/perfil_trama.png"
+        ],
+        "redirection": "https://www.linkedin.com/company/trama-b-textil/",
+        "ods": [
+            
+            { "color": "#FF3A21", "text": "ODS 5 : Igualdad de género" },
+            { "color": "#C5192D", "text": "ODS 4 : Educación de calidad" },
+            { "color": "#19486A", "text": "ODS 17: Alianzas" }
+        ],
+        "category": [
+            { "symbol": "Educación", "text": "educador" },
+            { "symbol": "Asesor.", "text": "asesoramiento" },
+            { "symbol": "Diseño", "text": "Diseño" }
+        ],
+        "instagramLink": "https://www.instagram.com/trama_b_textil/",
+         "linkedinLink": "https://www.linkedin.com/company/trama-b-textil/"
+    }
+    
+]

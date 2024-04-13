@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+}
+
+.desktopImage {
+  display: none;
+  height: 400px;
+  margin-left: 40px;
+}
+
+@media (min-width: 768px) {
+  .desktopImage {
+    display: block;
+    height: calc(100vh / 2.4);
+    object-fit: cover; /* Añade esta línea */
+  }
+}
