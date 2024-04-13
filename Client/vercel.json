@@ -1,6 +1,4 @@
 {
-    "rewrites": [
-        { "source": "/api/(.*)", "destination": "https://trama-b.onrender.com/$1" }
-    ],
+
     "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
 }

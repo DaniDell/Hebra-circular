@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+require('dotenv').config();
 
 export const registerUser = createAsyncThunk(
     'user/register',
     async (userData, { rejectWithValue }) => {
         try {
-            const response = await fetch('/api/users/create', {
+            const response = await fetch(`${process.env.VITE_BACKEND_URL}/users/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -36,7 +37,7 @@ export const loginUser = createAsyncThunk(
         await new Promise(resolve => setTimeout(resolve, 800));  // Retrasa la respuesta 
 
         try {
-            const response = await fetch('/api/users/login', {
+const response = await fetch(`${process.env.VITE_BACKEND_URL}/users/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
