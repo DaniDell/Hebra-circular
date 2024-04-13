@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-require('dotenv').config();
+
 
 export const registerUser = createAsyncThunk(
     'user/register',

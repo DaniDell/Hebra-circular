@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { logout } from './userSlice'; 
-require('dotenv').config();
+
 
 export const createMeasure = createAsyncThunk(
     'measures/create',
