@@ -1,6 +1,6 @@
 {
     "rewrites": [
-        { "source": "/api/(.*)", "destination": "https://@vercel/env/VITE_BACKEND_URL/$1" }
+        { "source": "/api/(.*)", "destination": "https://trama-b.onrender.com/$1" }
     ],
     "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
 }
