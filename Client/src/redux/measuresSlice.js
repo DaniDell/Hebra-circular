@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { logout } from './userSlice'; 
-
+const VITE_API_BASE = import.meta.env.VITE_API_BASE || "localhost";
 
 export const createMeasure = createAsyncThunk(
     'measures/create',
     async (measureData, { rejectWithValue, dispatch }) => { // Agrega el parámetro dispatch
         try {
-const response = await fetch(`${process.env.VITE_BACKEND_URL}/measures/create`, {
+const response = await fetch(`${VITE_API_BASE}/measures/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ export const getMeasuresByUserId = createAsyncThunk(
             const userId = localStorage.getItem('userId');
 
 
-    const response = await fetch(`${process.env.VITE_BACKEND_URL}/measures/getby?userId=${userId}`, {
+    const response = await fetch(`${VITE_API_BASE}/measures/getby?userId=${userId}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'

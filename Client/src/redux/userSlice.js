@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+const VITE_API_BASE = import.meta.env.VITE_API_BASE || '/api';
 
 export const registerUser = createAsyncThunk(
     'user/register',
     async (userData, { rejectWithValue }) => {
         try {
-            const response = await fetch(`${process.env.VITE_BACKEND_URL}/users/create`, {
+            const response = await fetch(`${VITE_API_BASE}/users/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ export const loginUser = createAsyncThunk(
         await new Promise(resolve => setTimeout(resolve, 800));  // Retrasa la respuesta 
 
         try {
-const response = await fetch(`${process.env.VITE_BACKEND_URL}/users/login`, {
+const response = await fetch(`${VITE_API_BASE}/users/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
