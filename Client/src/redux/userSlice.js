@@ -38,13 +38,13 @@ export const loginUser = createAsyncThunk(
 
         try {
 const response = await fetch(`${VITE_API_BASE}/users/login`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(userData)
-            });
-
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Origin': 'https://hebra-circular.vercel.app'
+  },
+  body: JSON.stringify(userData)
+});
             let data = await response.json();
 
             if (response.ok) {
