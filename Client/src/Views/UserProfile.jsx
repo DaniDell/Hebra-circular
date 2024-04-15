@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogTitle, DialogContent } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import HomeIcon from '@mui/icons-material/Home';
 
 const UserProfile = () => {
     const [open, setOpen] = useState(true);
     const userEmail = localStorage.getItem('email');
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate(-1);
+    }
+
 
     return (
         <div
@@ -20,7 +28,7 @@ const UserProfile = () => {
         }}
       >
             <Dialog open={open} sx={{ zIndex: 2000, '.MuiPaper-root': { borderRadius: 5 } }}>
-                <DialogTitle>Welcome, {userEmail}</DialogTitle>
+                <DialogTitle>Hola, {userEmail}</DialogTitle>
                 <DialogContent>
                     <Link to="/recepcion" style={{ textDecoration: 'none' }}>
                         <Button variant="contained" color="primary" style={{ margin: '10px' }}>
@@ -32,6 +40,16 @@ const UserProfile = () => {
                             Ver registros históricos
                         </Button>
                     </Link>
+                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <Button variant="outlined" color="secondary" style={{ margin: '10px' }} onClick={handleBack}>
+                        <ArrowBackIcon />
+                        </Button>
+                        <Link to="/home" style={{ textDecoration: 'none' }}>
+                        <Button variant="outlined" color="secondary" style={{ margin: '10px' }}>
+                        <HomeIcon />
+                        </Button>
+                    </Link>
+                    </div>
                 </DialogContent>
             </Dialog>
         </div>
