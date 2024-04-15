@@ -28,7 +28,7 @@ const UserProfile = () => {
         }}
       >
             <Dialog open={open} sx={{ zIndex: 2000, '.MuiPaper-root': { borderRadius: 5 } }}>
-                <DialogTitle>Hola, {userEmail}</DialogTitle>
+                <DialogTitle>Hola, {userEmail} ¿Qué deseas realizar?</DialogTitle>
                 <DialogContent>
                     <Link to="/recepcion" style={{ textDecoration: 'none' }}>
                         <Button variant="contained" color="primary" style={{ margin: '10px' }}>
@@ -42,12 +42,19 @@ const UserProfile = () => {
                     </Link>
                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <Button variant="outlined" color="secondary" style={{ margin: '10px' }} onClick={handleBack}>
-                        <ArrowBackIcon />
+                        <ArrowBackIcon /> Volver 
                         </Button>
                         <Link to="/home" style={{ textDecoration: 'none' }}>
                         <Button variant="outlined" color="secondary" style={{ margin: '10px' }}>
-                        <HomeIcon />
+                         <HomeIcon />
                         </Button>
+                        
+                    </Link>
+                    <Link to="/" style={{ textDecoration: 'none' }}>
+                        <Button variant="outlined" color="secondary" style={{ margin: '10px' }}>
+                         ir al inicio 
+                        </Button>
+                        
                     </Link>
                     </div>
                 </DialogContent>

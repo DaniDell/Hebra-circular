@@ -97,7 +97,7 @@ useEffect(() => {
 
     return (
         <Container maxWidth="sm" sx={{ paddingTop: '60px', paddingBottom: '60px', minHeight: "100vh" }}>
-              <h3 style={{ textAlign: "center" }}>Completá tus datos para suscribirte a novedades</h3> 
+              <h3 style={{ textAlign: "center" }}>Completá tus datos para registrarte</h3> 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
