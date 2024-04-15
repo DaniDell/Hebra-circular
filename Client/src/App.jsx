@@ -8,7 +8,7 @@ import {
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import CssBaseline from "@mui/material/CssBaseline";
-import { SpeedInsights } from "@vercel/speed-insights/react";
+// import { SpeedInsights } from "@vercel/speed-insights/react";
 import Landing from "./Views/Landing";
 import Login from "./Views/Login";
 import Home from "./Views/Home";
@@ -23,7 +23,7 @@ import Register from "./Views/Register";
 import Calculate from "./Views/Calculate";
 import ProtectedRoute from "./Components/Utils/ProtectedRoute";
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 import { checkAuthStatus } from "./redux/userSlice";
 
 function App() {
@@ -106,7 +106,7 @@ function App() {
             }
           />
         </Routes>
-        <SpeedInsights />
+        {/* <SpeedInsights /> */}
 
         <Footer />
       </div>
