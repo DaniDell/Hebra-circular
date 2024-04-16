@@ -60,8 +60,8 @@ const Landing = () => {
                 gutterBottom
                 style={{ margin: "6px", opacity: 0.8, maxWidth: "500px" }}
               >
-                Descubrí como el reciclaje mecánico puede ahorrar litros de agua
-                y kilos de gases de efecto invernadero (CO2e). Calculá tu huella
+                ¿Sabés cómo el reciclaje mecánico puede ahorrar litros de agua
+                y kilos de gases de efecto invernadero (CO2e)? Calculá tu huella
                 textil aquí:
               </Typography>
               <Button

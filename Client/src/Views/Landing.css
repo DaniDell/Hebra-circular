@@ -3,7 +3,7 @@ body {
 }
 
 .desktopImage {
-  display: block;
+  display: none;
   height: 400px;
   margin-left: 40px;
 }
