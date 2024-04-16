@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { logout } from './userSlice'; 
-const VITE_API_BASE = import.meta.env.VITE_API_BASE || "localhost";
+const VITE_API_BASE = import.meta.env.VITE_API_BASE || '/api';
 
 export const createMeasure = createAsyncThunk(
     'measures/create',
@@ -43,20 +43,25 @@ export const getMeasuresByUserId = createAsyncThunk(
             const userId = localStorage.getItem('userId');
 
 
-    const response = await fetch(`${VITE_API_BASE}/measures/getby?userId=${userId}`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            });
+const response = await fetch(`${VITE_API_BASE}/measures/getby?userId=${userId}`, {
+  method: 'GET',
 
-            if (!response.ok) {
-                console.error(`Error: ${response.status}`);
-                return rejectWithValue(response.status);
-            }
+});
 
-            const data = await response.json();
-            return data;
+if (!response.ok) {
+  console.error(`Errores: ${response.status}`);
+  return rejectWithValue(response.status);
+}
+
+let data;
+try {
+  data = await response.json();
+} catch (error) {
+  console.error('Error parsing JSON:', error);
+  return rejectWithValue(error.message);
+}
+
+return data;
         } catch (error) {
             console.error('Error:', error);
             return rejectWithValue(error.message);
