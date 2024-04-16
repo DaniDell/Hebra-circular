@@ -301,7 +301,7 @@ const ReceptionMeasure = () => {
             Agua: {waterImpactShow} litros
           </Typography>
           <Typography variant="body1">
-            CO2e: {carbonImpactShow} Kg
+            CO₂: {carbonImpactShow} Kg
           </Typography>
         </DialogContent>
         <DialogActions style={{ justifyContent: "space-between" }}>

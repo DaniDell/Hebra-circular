@@ -143,8 +143,8 @@ const DashHistoricalMeasure = () => {
           { minimumFractionDigits: 2, maximumFractionDigits: 2 }
         )} ltr. = ${
      Math.floor(totalWaterFootprint / 900)
-        } años de consumo humano`}</Typography>
-        <Typography>{`☁ CO2e mitigable : ${totalCarbonFootprint.toLocaleString(
+        } años de consumo humano*`}</Typography>
+        <Typography>{`☁ CO₂ mitigable : ${totalCarbonFootprint.toLocaleString(
           "es-ES",
           { minimumFractionDigits: 2, maximumFractionDigits: 2 }
         )} kg = ${eqCarbonPrint(totalCarbonFootprint)}`}</Typography>
@@ -343,6 +343,24 @@ const DashHistoricalMeasure = () => {
           </TableContainer>
         )}
       </div>
+<div style={{ padding: '100px 20px 20px 20px' }}>
+      <a 
+                  href="https://emf.thirdlight.com/link/2axvc7eob8zx-za4ule/@/preview/1?o" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '12px', textAlign: 'center', display: 'block' }}
+                >
+              * Datos Hídricos Fund. Ellen MacArthur
+                </a>
+                <a 
+                  href="https://ecosignal.net/cuanto-co2-absorbe-un-arbol-descubre-su-impacto-ambiental" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '12px', textAlign: 'center', display: 'block' }}
+                >
+              ** Datos de mitagación arboles . ecoSignal
+                </a>
+                </div>
     </div>
   );
 };

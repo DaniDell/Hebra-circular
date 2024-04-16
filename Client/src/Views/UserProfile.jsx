@@ -42,14 +42,14 @@ const UserProfile = () => {
                     </Link>
                    <div style={{ display: 'flex', justifyContent: 'center' }}>
                         <Button variant="outlined" color="secondary" style={{ margin: '10px' }} onClick={handleBack}>
-                        cerrar
+                        Volver
                         </Button>
-                        {/* <Link to="/home" style={{ textDecoration: 'none' }}>
+                        <Link to="/home" style={{ textDecoration: 'none' }}>
                         <Button variant="outlined" color="secondary" style={{ margin: '10px' }}>
                          <HomeIcon />
                         </Button>
                         
-                    </Link> */}
+                    </Link>
 
                     </div>
                 </DialogContent>

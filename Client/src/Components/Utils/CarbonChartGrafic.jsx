@@ -27,10 +27,10 @@ const CarbonChartGrafic = ({ data , carbonReductionPercentage, formatNumber }) =
         <XAxis dataKey="name" />
         <Legend formatter={(value, entry) => entry.dataKey === 'mitiga' ? <span style={{ color: '#4a4a46', fontWeight: 'bold' }}>{value}</span> : <span style={{ fontWeight: 'bold' }}>{value}</span>} />
         <Bar dataKey="landfill" fill={COLORS[0]} name="Fin de vida en vertedero">
-        <LabelList dataKey="landfill" position="center" content={(props) => <CustomizedLabel {...props} unit="CO2e" icon="🗑️" name="sin gestión" />}/>
+        <LabelList dataKey="landfill" position="center" content={(props) => <CustomizedLabel {...props} unit="CO₂" icon="🗑️" name="sin gestión" />}/>
         </Bar> 
         <Bar dataKey="closeloop" stackId="stack" fill={COLORS[1]} name="Gestión HEBRA CIRCULAR">
-        <LabelList dataKey="closeloop" position="bottom" content={(props) => <CustomizedLabel {...props} unit="CO2e" icon="♻️" name="reciclaje" />} />
+        <LabelList dataKey="closeloop" position="bottom" content={(props) => <CustomizedLabel {...props} unit="CO₂" icon="♻️" name="reciclaje" />} />
         </Bar>
 
         {/* <Bar 
