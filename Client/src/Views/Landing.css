@@ -3,7 +3,7 @@ body {
 }
 
 .desktopImage {
-  display: none;
+  display: block;
   height: 400px;
   margin-left: 40px;
 }
@@ -15,3 +15,4 @@ body {
     object-fit: cover; /* Añade esta línea */
   }
 }
+

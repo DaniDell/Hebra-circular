@@ -3,6 +3,9 @@ import { CircularProgress, Fab, Tooltip } from "@mui/material";
 import DemoCalculator from "../Components/DemoCalculator";
 import AlertDialog from "../Components/AlertDialog";
 import { styled } from "@mui/system";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 const StyledFab = styled(Fab)({
   fontSize: "25px",
@@ -41,6 +44,10 @@ const Calculate = () => {
     setOpenDialog(false);
   };
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+
   return (
     <div
       style={{
@@ -54,9 +61,11 @@ const Calculate = () => {
         paddingBottom: "1vh",
       }}
     >
+ <h2 style={{ padding: '0px 14px 14px 14px', color: theme.palette.secondary.main }}>Conocé como el reciclaje mitiga el impacto negativo**</h2>
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
+    
       <div
         style={{
           position: "fixed",
@@ -65,6 +74,7 @@ const Calculate = () => {
           transition: "bottom 3.3s ease-out",
         }}
       >
+        
 <Tooltip title="Ver información adicional" placement="top">
     <StyledFab color="" onClick={handleOpenDialog} style={{ fontSize: '30px', height: '48px', width: '48px', float: 'left' }}>
         ♻️
@@ -95,6 +105,12 @@ const Calculate = () => {
           onConfirm={handleCloseDialog}
         />
       </div>
+      
+<div style={{ paddingTop: isMobile ? '40px' : '80px', paddingBottom: isMobile ? '40px' : '0px', width: '90vw', display: 'flex', flexWrap: isMobile ? 'wrap' : 'nowrap', alignItems: 'center', justifyContent: 'center' }}>
+  <p >¿Quieres acceder a una demo de registro histórico de huella mitigable?  --</p>
+  <a href="/registro" target="_blank" rel="noopener noreferrer">  Regístrate aquí  </a>
+</div>
+<p style={{ padding: '40px 84px 0px 14px', color: theme.palette.secondary.main }}>**Este calculo no alcanza la huella de logística ya que requiere un analisís puntual con los paramtros de cada caso. Esta es una versión demo y con fines de divulgación.</p>
     </div>
   );
 };

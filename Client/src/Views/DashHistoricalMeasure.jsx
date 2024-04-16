@@ -17,6 +17,7 @@ import loopHebra from "../assets/loop-hebra.gif";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { eqCarbonPrint } from "../Funtions/eqCarbonPrint";
 
 const DashHistoricalMeasure = () => {
   const dispatch = useDispatch();
@@ -94,13 +95,18 @@ const DashHistoricalMeasure = () => {
 
   console.log("timeDifference:", timeDifference);
 
-  const ExpandMore = styled((props) => {  const { expand, ...other } = props;
-    return <ExpandMoreIcon {...other} />;  })(({ theme, expand }) => ({
+  const ExpandMore = styled((props) => {
+    const { expand, ...other } = props;
+    return <ExpandMoreIcon {...other} />;
+  })(({ theme, expand }) => ({
     transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
     marginLeft: "auto",
     transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest, }), 
-    "&:hover": { color: "white", },  fontSize: 35, }));
+      duration: theme.transitions.duration.shortest,
+    }),
+    "&:hover": { color: "white" },
+    fontSize: 35,
+  }));
 
   return (
     <div
@@ -135,21 +141,29 @@ const DashHistoricalMeasure = () => {
         <Typography>{`💧 Agua mitigable : ${totalWaterFootprint.toLocaleString(
           "es-ES",
           { minimumFractionDigits: 2, maximumFractionDigits: 2 }
-        )} ltr.`}</Typography>
+        )} ltr. = ${
+          totalWaterFootprint / 900
+        } años de consumo humano`}</Typography>
         <Typography>{`☁ CO2e mitigable : ${totalCarbonFootprint.toLocaleString(
           "es-ES",
           { minimumFractionDigits: 2, maximumFractionDigits: 2 }
-        )} kg`}</Typography>
+        )} kg = ${eqCarbonPrint(totalCarbonFootprint)}`}</Typography>
+
         <Typography>{`Recolectado en un periodo de ${timeDifference} `}</Typography>
       </Paper>
       <Typography
-  variant="h6"
-  component="div"
-  gutterBottom
-  style={{ backgroundColor: "white", marginTop: "16px", width: "100%", color: theme.palette.secondary.main }}
->
-  Registro Histórico de Scrap
-</Typography>
+        variant="h6"
+        component="div"
+        gutterBottom
+        style={{
+          backgroundColor: "white",
+          marginTop: "16px",
+          width: "100%",
+          color: theme.palette.secondary.main,
+        }}
+      >
+        Registro Histórico de Scrap
+      </Typography>
       <div style={{ display: "flex", justifyContent: "center", width: "90%" }}>
         {isLoading ? (
           <div
@@ -255,26 +269,36 @@ const DashHistoricalMeasure = () => {
                     </TableRow>
                   ))}
 
-<TableRow>
-  <TableCell colSpan={4}>
-    <div style={{ display: 'flex', backgroundColor: '#009d71', height: '20px' }}>
-      <Typography
-        onClick={() => setIsExpanded(!isExpanded)}
-        style={{
-          cursor: "pointer",
-          display: "flex",
-          color: "#f2f2f2",
-          fontWeight: "bold", justifyContent: 'end', alignItems: 'center', width: '100%', paddingLeft: 10,
-        }}
-      >
-        {isExpanded
-          ? "Ocultar datos pormenorizados"
-          : "Mostrar los registros por día"}
-        <ExpandMore expand={isExpanded} />
-      </Typography>
-    </div>
-  </TableCell>
-</TableRow>
+                <TableRow>
+                  <TableCell colSpan={4}>
+                    <div
+                      style={{
+                        display: "flex",
+                        backgroundColor: "#009d71",
+                        height: "20px",
+                      }}
+                    >
+                      <Typography
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        style={{
+                          cursor: "pointer",
+                          display: "flex",
+                          color: "#f2f2f2",
+                          fontWeight: "bold",
+                          justifyContent: "end",
+                          alignItems: "center",
+                          width: "100%",
+                          paddingLeft: 10,
+                        }}
+                      >
+                        {isExpanded
+                          ? "Ocultar datos pormenorizados"
+                          : "Mostrar los registros por día"}
+                        <ExpandMore expand={isExpanded} />
+                      </Typography>
+                    </div>
+                  </TableCell>
+                </TableRow>
 
                 <TableRow>
                   <TableCell

@@ -11,7 +11,7 @@ const Home = ()  => {
     padding: "1rem" }}>
 <h1 style={{ 
     textAlign: "center", 
-    padding: "1rem", 
+    padding: "4rem 1rem 4rem 1rem", 
     fontFamily: "sans-serif", 
     fontWeight: "lighter", 
     lineHeight: "1", 

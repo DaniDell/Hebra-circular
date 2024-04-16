@@ -3,8 +3,10 @@ import { CircularProgress } from "@mui/material";
 import { Button, Typography, Container, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Landing.css";
-const HeadingComponent = React.lazy(() => import('../Components/HeadingComponent'));
-import desktopImage from '../../src/assets/landing.png';
+const HeadingComponent = React.lazy(() =>
+  import("../Components/HeadingComponent")
+);
+import desktopImage from "../../src/assets/landing.png";
 
 const Landing = () => {
   return (
@@ -23,50 +25,14 @@ const Landing = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginBottom: '40px',
+          marginBottom: "40px",
         }}
       >
-       <Suspense fallback={<CircularProgress />}>
+        <Suspense fallback={<CircularProgress />}>
           <HeadingComponent />
         </Suspense>
 
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-  <div style={{ flex: '50%' }}>
-        <Typography
-          variant="h6"
-          component="h2"
-          gutterBottom
-          style={{margin: "10px", opacity: 0.8 }}
-        >
-          Calculá tu huella textil aquí:
-        </Typography>
-        <Button
-          variant="contained"
-          color="custom2"
-          component={Link}
-          to="/calculadora"
-          style={{ marginTop: "20px", fontSize: "19px", color: '#fff', backgroundColor: '#00947a'}}
-        >
-          Probá nuestra calculadora demo
-        </Button>
-        <Typography
-          variant="h6"
-          component="h2"
-          gutterBottom
-          style={{margin: "10px", opacity: 0.8, marginTop: "30px" }}
-        >
-          Descubrí como el reciclaje mecánico puede ahorrar litros de agua y toneladas de gases nocivos para nuestro planeta 🌎.
-        </Typography>
-        </div>
-      <img 
-  src={desktopImage} 
-  alt="Caluladora textil" 
-  className="desktopImage"
-/>
-
-</div>
-
-        {/* <Box
+        <Box
           display="flex"
           flexDirection="row"
           flexWrap="wrap"
@@ -77,32 +43,50 @@ const Landing = () => {
             backgroundColor: "#D6D6D6",
             width: "auto",
             borderRadius: "25px",
-            padding: "30px"
+            padding: "20px",
           }}
         >
-
-
-          <Typography
-            variant="h6"
-            gutterBottom
-            component="h1"
-            style={{ opacity: 0.8 , padding: "8px", color: '#000' }}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            Para sumarte y conocer más sobre el desarrollo de esta plataforma:
-          </Typography>
-          <Button
-            variant="contained"
-            color="secondary"
-            component={Link}
-            to="/registro"
-            style={{ margin: "10px" }}
-          >
-            Completá el cuestionario
-          </Button>
-        </Box> */}
- 
+            <div style={{ flex: "50%" }}>
+              <Typography
+                variant="h6"
+                component="h2"
+                gutterBottom
+                style={{ margin: "6px", opacity: 0.8, maxWidth: "500px" }}
+              >
+                Descubrí como el reciclaje mecánico puede ahorrar litros de agua
+                y kilos de gases de efecto invernadero (CO2e). Calculá tu huella
+                textil aquí:
+              </Typography>
+              <Button
+                variant="contained"
+                color="custom2"
+                component={Link}
+                to="/calculadora"
+                style={{
+                  marginTop: "20px",
+                  fontSize: "19px",
+                  color: "#fff",
+                  backgroundColor: "#00947a",
+                }}
+              >
+                Probá nuestra calculadora demo
+              </Button>
+            </div>
+            <img
+              src={desktopImage}
+              alt="Caluladora textil"
+              className="desktopImage"
+            />
+          </div>
+        </Box>
       </Container>
-
     </div>
   );
 };
