@@ -110,8 +110,16 @@ const Calculate = () => {
   <p >¿Quieres acceder a una demo de registro histórico de huella mitigable?  --</p>
   <a href="/registro" target="_blank" rel="noopener noreferrer">  Regístrate aquí  </a>
 </div>
-<p style={{ padding: '40px 84px 0px 14px', color: theme.palette.secondary.main }}>**Este calculo no alcanza la huella de logística ya que requiere un analisís puntual con los paramtros de cada caso. Esta es una versión demo y con fines de divulgación.</p>
-    </div>
+<p style={{ 
+    padding: '40px 55px 0px 4px', 
+    color: theme.palette.secondary.main, 
+    width: '95vw',
+    textAlign: 'left',
+    lineHeight: '1.2' // Ajusta este valor según tus necesidades
+}}>
+    **Esta es una versión demo con fines de divulgación y educación ambiental. No alcanza a computar la huella total de logística y procesos anexos, ya que requiere información más específica .
+</p> 
+</div>
   );
 };
 

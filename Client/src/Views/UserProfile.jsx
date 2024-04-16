@@ -40,22 +40,17 @@ const UserProfile = () => {
                             Ver registros históricos
                         </Button>
                     </Link>
-                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                   <div style={{ display: 'flex', justifyContent: 'center' }}>
                         <Button variant="outlined" color="secondary" style={{ margin: '10px' }} onClick={handleBack}>
-                        <ArrowBackIcon /> Volver 
+                        cerrar
                         </Button>
-                        <Link to="/home" style={{ textDecoration: 'none' }}>
+                        {/* <Link to="/home" style={{ textDecoration: 'none' }}>
                         <Button variant="outlined" color="secondary" style={{ margin: '10px' }}>
                          <HomeIcon />
                         </Button>
                         
-                    </Link>
-                    <Link to="/" style={{ textDecoration: 'none' }}>
-                        <Button variant="outlined" color="secondary" style={{ margin: '10px' }}>
-                         ir al inicio 
-                        </Button>
-                        
-                    </Link>
+                    </Link> */}
+
                     </div>
                 </DialogContent>
             </Dialog>

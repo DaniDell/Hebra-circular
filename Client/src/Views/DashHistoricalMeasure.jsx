@@ -142,7 +142,7 @@ const DashHistoricalMeasure = () => {
           "es-ES",
           { minimumFractionDigits: 2, maximumFractionDigits: 2 }
         )} ltr. = ${
-          totalWaterFootprint / 900
+     Math.floor(totalWaterFootprint / 900)
         } años de consumo humano`}</Typography>
         <Typography>{`☁ CO2e mitigable : ${totalCarbonFootprint.toLocaleString(
           "es-ES",
