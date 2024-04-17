@@ -91,7 +91,7 @@ const InputComponent = ({
 
   return (
     <div>
-      <h3>Calculá tu huella textil:</h3>
+      <h3>Proyectá la huella de tus remanentes:</h3>
       <Box mb={1.5}>
         
         <FormControl fullWidth error={!!compositionError}>

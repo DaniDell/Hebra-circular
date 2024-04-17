@@ -61,7 +61,7 @@ const Calculate = () => {
         paddingBottom: "1vh",
       }}
     >
- <h2 style={{ padding: '0px 14px 14px 14px', color: theme.palette.secondary.main }}>Conocé como el reciclaje mitiga el impacto negativo**</h2>
+ <h2 style={{ padding: '0px 14px 14px 14px', color: theme.palette.secondary.main }}>Conocé como el reciclaje puede mitigar el impacto negativo textil**</h2>
       <Suspense fallback={<CircularProgress />}>
         <DemoCalculator />
       </Suspense>
