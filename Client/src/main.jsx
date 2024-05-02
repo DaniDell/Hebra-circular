@@ -12,7 +12,7 @@ const root = document.getElementById("root");
 const customTheme = createTheme({
   ...theme,
   typography: {
-    fontFamily: "'Nunito','Poppins', 'Open Sans', Roboto, Helvetica, Arial",
+    fontFamily: "'Nunito','', 'Open Sans', Roboto, Helvetica, Arial",
   },
   components: {
     MuiButton: {

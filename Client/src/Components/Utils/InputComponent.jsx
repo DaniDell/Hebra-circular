@@ -13,7 +13,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  Box,
+  Box, Paper
 } from "@mui/material";
 
 const InputComponent = ({
@@ -28,6 +28,13 @@ const InputComponent = ({
   const [compositionError, setCompositionError] = useState("");
   const [open, setOpen] = useState(false);
   const [newKilosError, setNewKilosError] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const getYValue = () => {
+    return window.innerWidth <= 768 ? 80 : 160;
+  };
+  
+  const y = getYValue();
 
   useEffect(() => {
     setIsValid(composition !== "" && kilos !== "" && kilos >= 0.001);
@@ -80,8 +87,9 @@ const InputComponent = ({
     } else {
       onCalculateClick();
       setTimeout(() => {
-        document.body.scrollIntoView({ behavior: "smooth", block: "end" });
-      }, 0);
+  window.scrollTo({ top: y, behavior: 'smooth' });
+}, 0);
+      setIsSubmitted(true);
     }
   };
 
@@ -91,8 +99,31 @@ const InputComponent = ({
 
   return (
     <div>
-      <h3>Proyectá la huella de tus remanentes:</h3>
-      <Box mb={1.5}>
+{!isSubmitted && (
+<Paper 
+  elevation={0} 
+  style={{ 
+    marginBottom: '1rem', 
+    padding: '0rem 1rem 0rem 1rem',
+    backgroundColor: '#E3E461AA', 
+    borderRadius: '5px',
+   border: '2px solid #E3E461AA',
+  }}
+>
+<h2 style={{ 
+  fontSize: '14px', 
+  textAlign: 'start',
+  lineHeight: '1.2',
+  fontFamily: 'Poppins',
+  fontWeight: 500,
+}}>
+Con cada corte industrial se genera hasta un <strong>15%</strong> de merma (retazos textiles), los que se convierten en residuos<strong> (RSU)</strong>. Mediante una gestión responsable circular es posible <strong>mitigar su impacto ambiental negativo. </strong> <br/> <br/>Explorálo completando los datos<strong> aquí 👇</strong>
+</h2>
+  
+
+</Paper>
+
+)}     <Box mb={1.5}>
         
         <FormControl fullWidth error={!!compositionError}>
           <InputLabel id="textile-composition-label">
@@ -123,35 +154,18 @@ const InputComponent = ({
             >
               Mezcla de fibras 
             </MenuItem>
-            {/* <MenuItem
-              value="algodon Reutilizado"
-              style={{ whiteSpace: "normal" }}
-            >
-              🔄 Recirculado Tela de algodón
-            </MenuItem>
-            <MenuItem
-              value="poliester Reutilizado"
-              style={{ whiteSpace: "normal" }}
-            >
-              🔄 Recirculado Tela de Poliéster
-            </MenuItem>
-            <MenuItem
-              value="Mezcla sin definición Reutilizado"
-              style={{ whiteSpace: "normal" }}
-            >
-              🔄 Recirculado Tela mezcla de fibras
-            </MenuItem> */}
+
           </Select>
           <FormHelperText>{compositionError}</FormHelperText>
         </FormControl>
       </Box>
       <Grid container spacing={2} alignItems="start">
-      <Grid item xs={8} sm={7}>
-          <TextField
+      <Grid item xs={6} sm={7}>
+          <TextField sx= {{  minHeight: '48px', marginRight: "48px"}}
             type="number"
             onChange={(event) => {
-              if (event.target.value.length > 7) {
-                event.target.value = event.target.value.slice(0, 7);
+              if (event.target.value.length > 4) {
+                event.target.value = event.target.value.slice(0, 4);
               }
               handleKilosChange(event);
             }}
@@ -165,16 +179,20 @@ const InputComponent = ({
             size="small"
             error={!!newKilosError}
             helperText={newKilosError}
+            
           />
         </Grid>
 
-        <Grid item xs={4} sm={5}>
+        <Grid item xs={6} sm={5}>
           <Button
             fullWidth
             variant="contained"
             color="primary"
             onClick={handleCalculateClick}
-            sx={{
+            sx={{ 
+            
+            padding: '8px',
+           
               boxShadow:
                 "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)", // Agrega sombra
             }}

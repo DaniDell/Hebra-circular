@@ -19,10 +19,10 @@ import { logout } from '../redux/userSlice';
 import {logoutMeasures} from '../redux/measuresSlice';
 
 const pages = [
-  { text: "🧮 Probar Demo calculadora", path: "/calculadora" },
+  { text: "Probar calculadora de mitigación ", path: "/calculadora" },
   
-  { text: "Conocer más sobre nosotros", path: "/home" },
-  { text: "Suscribite al Newsletter Hebra + Trama 📨", path: "/registro" },
+  { text: "Conocer más sobre este proyecto", path: "/home" },
+  { text: "Suscribite a nuestro Newsletter 📨", path: "/registro" },
   // { text: "Sugerencias aquí", path: "/retroalimentacion" },
  
 ];
