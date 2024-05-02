@@ -17,7 +17,7 @@ const Home = ()  => {
     lineHeight: "1", 
     fontSize: "1.5rem" 
 }}>
-Brindamos una <strong> solución integral </strong> para la gestión de sus <strong>descartes textiles</strong> ♻️, mediante  con <strong>alianzas estratégicas</strong>:
+Brindamos una <strong> solución integral </strong> para la gestión de sus <strong>descartes textiles</strong> ♻️, mediante <strong>alianzas estratégicas</strong>:
 </h1>
 
       <div

@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { config as loadEnv } from 'dotenv';
+import compression from 'vite-plugin-compression';
 
 loadEnv();
 
@@ -8,7 +9,7 @@ loadEnv();
 const backendUrl = process.env.VITE_BACKEND_URL;
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), compression()],
   server: {
     fs: {
       deny: ['.env', '.env.*', '*.{crt,pem}', 'custom.secret']
