@@ -1,4 +1,4 @@
-# Trama B Textil App
+# Trama B Textil App - Customizado para Hebra Circular
 
 Esta aplicación permite calcular el impacto ambiental basado en la composición textil y la cantidad de kilos gestionados.
 
